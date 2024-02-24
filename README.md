@@ -8,6 +8,20 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Development
 
+### Running Locally
+
+```
+git clone 'git@github.com:Eva-Wamuyu/Student-Result-Analysis-Dashboard.git'
+or
+git clone 'https://github.com/Eva-Wamuyu/Student-Result-Analysis-Dashboard.git'
+
+cd Student-Result-Analysis-Dashboard
+
+npm install
+
+ng serve
+```
+
 ### Components
 There are 4 components
 * app - The main component which is the starting point and bootstaps the application.
