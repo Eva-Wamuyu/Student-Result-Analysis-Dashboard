@@ -1,0 +1,23 @@
+<h2>Score Distribution Over the Terms</h2>
+<p>
+  <small>This shows the pattern of average  score per term since admision</small>
+</p>
+
+<h3> <small> {{title|titlecase}} </small></h3>
+<div class="d-flex justify-content-end mb-3">
+  <label for="filter">Distribution For:</label>
+  <select [(ngModel)]="makeSelection" (change)="setGraph()" id="filter">
+    <option value="total" >Total</option>
+    <option value="mathematics">Mathematics</option>
+    <option value="chemistry">Chemistry</option>
+    <option value="english">English</option>
+    <option value="history">History</option>
+    <option value="CRE">CRE</option>
+  </select>
+</div>
+
+<div class="responsive-container">
+  <canvas id="canvas" class="canvas"></canvas>
+</div>
+
+

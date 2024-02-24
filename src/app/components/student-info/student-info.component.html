@@ -1,0 +1,27 @@
+<div class="row primary-bg p-4">
+  <div class="col-12 mb-3">
+    <img src="{{student.passport}}" alt="{{student.name}} avatar" class="img-fluid rounded-circle" style="max-width: 100px;">
+  </div>
+    <div class="col-lg-6">
+      <p><span class="fw-bold">Name:</span> <span class="main-text">
+         {{student.name}} </span></p>
+      <p>
+        <span class="fw-bold">Adm:</span>
+        <span class="main-text">
+        {{student.adm_no}}
+      </span>
+      </p>
+    </div>
+
+    <div class="col-lg-6">
+      <p>
+        <span class="fw-bold">Class:</span>
+        {{student.form}} {{student.stream}}
+      </p>
+      <p>
+        <span class="fw-bold">House:</span>
+        {{student.house}}
+      </p>
+    </div>
+</div>
+

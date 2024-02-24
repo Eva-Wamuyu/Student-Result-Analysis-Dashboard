@@ -1,0 +1,53 @@
+<h2 class="mt-4"> Results For Form Two Term Two 2023</h2>
+<div>
+  <p>
+    <span class="fw-bold">Total Points:</span> 80/84
+  </p>
+  <p>
+    <span class="fw-bold">Stream Rank:</span> 4
+  </p>
+
+  <p>
+    <span class="fw-bold">Class Rank:</span> 25
+  </p>
+
+</div>
+
+
+<hr>
+<h2 class="mt-4"> Subject Scores</h2>
+<p>
+  <small>Red shows a drop in marks from the last score, green shows an improvement and grey shows stagnation</small>
+</p>
+
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr class="">
+        <th scope="col">Subject</th>
+        <th scope="col">Marks</th>
+        <th scope="col">Teacher</th>
+        <th scope="col">Strengths</th>
+        <th scope="col">Weaknesses</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let subject of subjects">
+        <td>{{subject.name}}</td>
+        <td>{{subject.marks}}
+          <span *ngIf="subject.trend === 'up'" class="text-ok"><i class="fa fa-arrow-up"></i></span>
+          <span *ngIf="subject.trend === 'down'" class="text-danger"><i class="fa fa-arrow-down"></i></span>
+          <span *ngIf="subject.trend === 'same'" class="text-stagnate"> <i class="fa fa-circle"></i>  </span>
+        </td>
+
+        <td>{{subject.teacher}}</td>
+        <td>{{subject.strengths}}</td>
+        <td>{{subject.weaknesses}}</td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>
+
