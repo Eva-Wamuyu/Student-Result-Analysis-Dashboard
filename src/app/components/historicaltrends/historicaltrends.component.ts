@@ -11,18 +11,19 @@ export class HistoricaltrendsComponent {
   chart: any;
   title:string = "Total";
   makeSelection: keyof Dataset = "total";
+  suggestMax: number = 84;
 
   dataset:Dataset = {
     total: [82, 77, 70, 83, 80],
-    mathematics: [90, 85, 88, 92, 92],
-    english: [78, 82, 80, 85, 88],
-    CRE: [75, 70, 80, 78, 82],
+    mathematics: [90, 85, 88, 85, 85],
+    english: [78, 82, 80, 85, 92],
+    CRE: [75, 70, 80, 78, 79],
     history: [67,90,100,85,76],
     chemistry: [90, 85,80,75,78]
   }
   setGraph() {
     this.title = this.makeSelection;
-    this.generateGraph(this.makeSelection);
+    this.generateGraph(this.makeSelection,this.suggestMax);
   }
 
 
@@ -30,10 +31,10 @@ export class HistoricaltrendsComponent {
 
 
   ngOnInit(): void {
-    this.generateGraph(this.makeSelection);
+    this.generateGraph(this.makeSelection,this.suggestMax);
   }
 
-  generateGraph(category:keyof Dataset){
+  generateGraph(category:keyof Dataset, suggestMax:number){
     if (this.chart) {
       this.chart.destroy();
     }
@@ -47,11 +48,19 @@ export class HistoricaltrendsComponent {
             data: this.dataset[category],
             borderColor: '#243447',
             fill: true,
-            backgroundColor: '#75b2ca'
+            backgroundColor: 'rgba(117, 178, 202, 0.5)'
 
           }
         ]
       },
+      options: {
+        scales:{
+          y:{
+            suggestedMin: 0,
+            suggestedMax: suggestMax
+          }
+        }
+      }
 
     })
   }
