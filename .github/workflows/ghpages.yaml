@@ -17,7 +17,7 @@ jobs:
       - name: Node setup
         uses: actions/setup-node@v2
         with:
-          node-version: '16.0'
+          node-version: '18.13'
 
       - name: Check if angular-cli-ghpages is installed
         run: |
