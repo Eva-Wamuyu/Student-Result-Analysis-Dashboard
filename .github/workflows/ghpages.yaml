@@ -31,4 +31,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-              ng deploy --base-href="https://eva-wamuyu.github.io/Student-Result-Analysis-Dashboard/"
+              ng deploy --base-href=https://eva-wamuyu.github.io/Student-Result-Analysis-Dashboard/
