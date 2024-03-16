@@ -1,0 +1,34 @@
+name: Deploying to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Node setup
+        uses: actions/node@ve
+        with:
+          node-version: '16.0'
+
+      - name: Check if angular-cli-ghpages is installed
+        run: |
+            if ! ng config cli.packageManager 2> /dev/null; then
+              npm install -g @angular/cli
+            fi
+            if ! ng add angular-cli-ghpages 2> /dev/null; then
+              echo "Angular cli ghpages installing"
+              npm install -g angular-cli-ghpages
+            fi
+
+      - name: Deploy to GitHub Pages
+        run: |
+              ng deploy --base-href="https://eva-wamuyu.github.io/Student-Result-Analysis-Dashboard/"
